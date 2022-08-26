@@ -95,7 +95,7 @@ console.log("process.env.MONGODB_USERNAME", process.env.MONGODB_USERNAME);
 console.log("process.env.MONGODB_PASSWORD", process.env.MONGODB_PASSWORD);
 
 mongoose.connect(
-  `mongodb+srv://admin:admin@cluster0.xtc075z.mongodb.net/goals?retryWrites=true&w=majority`,
+  `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@localhost:27017/course-goals?authSource=admin`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
