@@ -91,8 +91,11 @@ app.get("/crash", async (req, res) => {
 
 // app.listen(80);
 
+console.log("process.env.MONGODB_USERNAME", process.env.MONGODB_USERNAME);
+console.log("process.env.MONGODB_PASSWORD", process.env.MONGODB_PASSWORD);
+
 mongoose.connect(
-  `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/course-goals?authSource=admin`,
+  `mongodb+srv://admin:admin@cluster0.xtc075z.mongodb.net/goals?retryWrites=true&w=majority`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
