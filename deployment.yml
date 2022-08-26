@@ -21,11 +21,13 @@ spec:
             - name: MONGO_INITDB_ROOT_PASSWORD
               value: password
         - name: backend
-          image: jchand3/backend-test:212
+          image: jchand3/backend-test:214
           livenessProbe:
-            exec:
-              command:
-                - curl -s http://localhost:80/goals"
+            httpGet:
+              path: /
+              port: 80
+            periodSeconds: 10
+            initialDelaySeconds: 5
           env:
             - name: MONGODB_USERNAME
               value: admin
