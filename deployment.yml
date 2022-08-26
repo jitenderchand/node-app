@@ -13,17 +13,17 @@ spec:
         app: backend
     spec:
       containers:
-        - name: backend
-          image: jchand3/backend-test:211
-          env:
-            - name: MONGODB_USERNAME
-              value: admin
-            - name: MONGODB_PASSWORD
-              value: password
         - name: mongo-service
           image: mongo
           env:
             - name: MONGO_INITDB_ROOT_USERNAME
               value: admin
             - name: MONGO_INITDB_ROOT_PASSWORD
+              value: password
+        - name: backend
+          image: jchand3/backend-test:212
+          env:
+            - name: MONGODB_USERNAME
+              value: admin
+            - name: MONGODB_PASSWORD
               value: password

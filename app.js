@@ -95,7 +95,7 @@ console.log("process.env.MONGODB_USERNAME", process.env.MONGODB_USERNAME);
 console.log("process.env.MONGODB_PASSWORD", process.env.MONGODB_PASSWORD);
 
 mongoose.connect(
-  `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@localhost:27017/course-goals?authSource=admin`,
+  `mongodb://admin:password@localhost:27017/course-goals?authSource=admin`,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -104,6 +104,7 @@ mongoose.connect(
     if (err) {
       console.error("FAILED TO CONNECT TO MONGODB");
       console.error(err);
+      process.exit();
     } else {
       console.log("CONNECTED TO MONGODB!!");
       app.listen(80);
