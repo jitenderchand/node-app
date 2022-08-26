@@ -22,6 +22,10 @@ spec:
               value: password
         - name: backend
           image: jchand3/backend-test:212
+          livenessProbe:
+            exec:
+              command:
+                - curl -s http://localhost:80/goals"
           env:
             - name: MONGODB_USERNAME
               value: admin
