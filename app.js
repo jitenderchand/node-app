@@ -28,6 +28,13 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.send(`
+    <h1>Hello from this NodeJS app!</h1>
+    <p>Try sending a request to /error and see what happens</p>
+  `);
+});
+
 app.get("/goals", async (req, res) => {
   console.log("TRYING TO FETCH GOALS");
   try {
