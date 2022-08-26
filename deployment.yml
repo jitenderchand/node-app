@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: jchand3/backend-test:205
+          image: ${imageName}
           env:
             - name: MONGODB_USERNAME
               value: admin
